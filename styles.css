@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Josh Comeau's CSS reset
+https://www.joshwcomeau.com/css/custom-css-reset/  */
+
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root, #__next {
+    isolation: isolate;
+}
+
+/* ----------------------------- */
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100svh;
+    background-color: hsl(0, 0%, 20%);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 0%, 60%);
+    padding: 1rem;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: hsl(0, 0%, 20%);
+}
+
+main {
+    display: grid;
+    place-content: center;
+    grid: repeat(3, auto) / auto;
+    gap: 2rem;   
+}
+
+.turn {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: hsl(0, 0%, 60%);
+}
+
+.board {
+    display: grid;
+    grid: repeat(3, 250px) / repeat(3, 250px);
+    place-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.square {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.square:disabled {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.square:hover {
+    background-color: hsl(0, 0%, 95%)
+}
+
+.players {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.players div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.players label {
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 60%);
+}
+
+.players input[type="text"]{
+    border: 0;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.restart button {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 60%);
+    border: none;
+    border-radius: 0.2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(0, 0%, 60%);
+    padding: 1rem;
+}
+
+footer img {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0 0 2px;
+}
